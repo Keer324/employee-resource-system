@@ -1,0 +1,92 @@
+{% load static %}
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Employee Resource System</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="{% static 'employee_information/assets/default/css/style.css' %}">
+ <link rel="stylesheet" href="{% static 'employee_information/assets/bootstrap/css/bootstrap.min.css' %}">
+
+ <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'employee_information/assets/material-admin/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'employee_information/assets/material-admin/vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'employee_information/assets/material-admin/vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'employee_information/assets/material-admin/vendors/jvectormap/jquery-jvectormap.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{% static 'employee_information/assets/material-admin/css/demo/style.css' %}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{% static 'employee_information/assets/material-admin/images/favicon.png' %}" />
+    <script src="{% static 'employee_information/assets/default/js/jquery-3.6.0.min.js' %}">
+    </script>
+    <script src="{% static 'employee_information/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'employee_information/assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'employee_information/assets/bootstrap/js/popper.min.js' %}"></script>
+</head>
+  
+<body>
+<script src="{% static 'employee_information/assets/material-admin/js/preloader.js' %}"></script>
+    <div class="body-wrapper">
+        <div class="main-wrapper">
+            <div class="page-wrapper full-page-wrapper d-flex align-items-center justify-content-center">
+                <main class="auth-page">
+                    <div class="mdc-layout-grid">
+                        <div class="mdc-layout-grid__inner justify-content-center">
+                            <div class="mdc-layout-grid__cell--span-2-desktop"></div>
+                            <div class="mdc-card mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-1-tablet mb-5">
+                                <h3 class="text-center">Employee Resource System</h3>
+                            </div>
+                        </div>
+                        <div class="mdc-layout-grid__inner">
+                            <div class="stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-1-tablet"></div>
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-6-tablet">
+                                <div class="mdc-card">  
+	 					<form method="post">
+						{% csrf_token %}
+						 <div class="mdc-layout-grid">
+						 	<div class="mdc-layout-grid__inner">
+						 		<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+                <div class="mdc-text-field w-100">
+						<input type="text" name="username" class="form-control py-4" placeholder="Username">
+						</div>
+           </div>
+           <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+           <div class="mdc-text-field w-100">
+						<input type="password" name="pwd" class="form-control py-4" placeholder="Password">
+						 </div>
+             </div>
+             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+						<input type="submit" value="Login" class="mdc-button mdc-button--raised w-100">
+					 
+					</form>
+
+				</div>
+				
+			</div>
+
+		</div>
+		<a href="{% url 'welcome' %}" class="float-right text-dark mt-2">Go back to welcome</a>
+	</div>
+</body>
+
+
+{% if error == "no" %}
+<script>
+		alert('Logged in Sucessfully');
+		window.location=('{% url 'home-page' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+	alert('Invalid Login credentials');
+</script>
+{% endif %}
+	
+
+</html>

@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    body{
+    font-family: Arial,sans-serif;
+  }
+  .nav-link{
+    color: white !important;
+    justify-content: space-between;
+  }
+  
+  .lead{
+  font-size:20px ;  
+  }
+  .containerr{
+    background-image: url(static/employee_information/assets/material-admin/images/wp7728155.jpg);
+    background-size:cover;
+    color: white;
+    background-repeat: no-repeat;
+    capacity: 0.8;
+    height: 100vh;
+  }
+  .container-wrapper{
+    background-color:rgba(0, 0, 0, 0.5) ;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+  }
+  .container-wrapper h1{
+    font-size: 50px;
+  }
+  .btn-primary{
+    background-color: #28dddd;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: ;
+  }
+  .text-primaryy{
+    color: #28dddd;
+  }
+
+
+
+  </style>
+
+<body>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'welcome' %}">Employee Resource System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Employee Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'admin_login' %}">Admin Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="containerr">
+<div class="container-wrapper"> 
+<h1>
+  <span>Welcome to</span> 
+          <span class="text-primaryy">Employee Resource System</span>
+</h1>
+<p class="lead">It is a system were Admin/HR can add,delete,update the employees.
+  The main purpose for developing this system is to provide all the details of 
+  online to many types of work releted employees.This system can help for the 
+  employer to contain all the records of employee payroll and salary features online.
+  The performance of the employees can also be kept track of through this application. 
+  This application can contain the administrator who can post announcements, holidays, birthdays, and notes. 
+  This will be one of the most exciting projects that one can work on and implement in the real-time world.</p>
+<!--<button class="btn-primary">Read More</button>-->
+  </div>
+  </div>
+</body>
+</html>

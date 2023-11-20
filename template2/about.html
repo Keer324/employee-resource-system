@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ABOUT US</h1>
+    </header>
+    <main>
+        <div >
+        <section class="ert">
+            <h2>About Employee Resource System</h2>
+            <p>The "Employee Resource System" has been developed to overide the problems prevailing in the practicing manual system. This software is supported to eliminate and in some cases reduce the hardships faced by this existing system. Moreover this system is designed for the particular need of the company to carry out operations in a smooth and effective manner.</p>
+
+            <p>The application is reduced as much as possible to avoid errors while entering the data. It also provides error message while entering invalid data. No formal knowledge is needed for the user to use this system. Thus by this all it proves it is user-friendly Employee Resource System, as described above, can lead to omor free, secure. reliable and fast management system. It can assist the user to concentrate on their other activities rather to concentrate on the record keeping. Thus it will help organization in better utilization of resources .</p>
+        </section>
+    </div>
+        <section class="abcd">
+            <div class="person">
+                <h2>CONTACT INFO</h2>
+            <ul>
+                <li>Adresss No:XXXXXXX street</li>
+                <li>Phone No:9743405265</li>
+                <li>Eamil:admin123@gmail.com</li>
+            </ul>
+        </div>
+               
+            <div class="person">
+                <h2>MODULES</h2>
+                <ul>
+                <li>Department Module</li>
+                <li>Position Module</li>
+                <li>Leave Module</li>
+                <li>Employee Module</li>
+            </ul>
+            </div>
+            <div class="person">
+                <h2>PROJECT LINKS</h2>
+                <ul>
+                  <li>
+                     <a href="{% url 'welcome' %}">Home Page</a>
+                  </li>
+                  <li>
+                     <a href="{% url 'register' %}">Employee Login</a>
+                  </li>
+                  <li>
+                     <a href="{% url 'admin_login' %}">Admin Login</a>
+                  </li>
+              </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Our Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+header {
+    background: linear-gradient(270deg,#8533ff,#5900b3);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+     margin-top: 20px;
+     
+}
+
+section {
+    margin-bottom: 20px;
+    background: linear-gradient(270deg,#ffb3b3,  #d1b3ff);
+
+
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.person {
+    display: inline-block;
+    margin-right: 150px;
+    vertical-align: top;
+}
+
+.person img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.person h3 {
+    margin-top: 10px;
+}
+.abcd{
+    padding: 20px;
+
+}
+.ert{
+    padding: 10px;
+}
+footer {
+    background: linear-gradient(270deg, #8533ff,#3d0099);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+

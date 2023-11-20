@@ -1,0 +1,190 @@
+ <style media="screen">
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background: linear-gradient(105deg,#4dffff,#ff00ff);
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration_form{
+  background: #ccffff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 500px;
+}
+
+.registration_form .title{
+  font-family: inherit;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: white;
+  background: #1a8cff;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-top: -25px;
+  margin-left:-25px;
+  margin-right:-25px;
+  border-radius: 25px;
+  width: 500px;
+
+}
+
+.form_wrap{
+  margin-top: 35px;
+}
+
+.form_wrap .input_wrap{
+  margin-bottom: 15px;
+}
+
+.form_wrap .input_wrap:last-child{
+  margin-bottom: 0;
+}
+
+.form_wrap .input_wrap label{
+  display: block;
+  margin-bottom: 3px;
+  color: #1a1a1f;
+}
+
+.form_wrap .input_grp{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form_wrap .input_grp  input[type="password"]{
+  width: 165px;
+}
+
+.form_wrap  input[type="text"]{
+  width: 100%;
+  border-radius: 3px;
+  border: 1.3px solid #9597a6;
+  padding: 10px;
+  outline: none;
+}
+
+.form_wrap  input[type="text"]:focus{
+  border-color: #063abd;
+}
+
+.form_wrap ul{
+ border:1px solid rgb(115, 185, 235);
+  width:70%;
+  background: rgb(206, 238, 242);
+  margin-left: 15%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form_wrap ul li:first-child{
+  margin-right: 15px;
+}
+
+.form_wrap ul .radio_wrap{
+  position: relative;
+  margin-bottom: 0;
+}
+
+.form_wrap ul .radio_wrap .input_radio{
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.form_wrap ul .radio_wrap span{
+  display: inline-block;
+  font-size: 17px;
+  padding: 3px 15px;
+  border-radius: 15px;
+  color: #101749;
+}
+
+.form_wrap .input_radio:checked ~ span{
+  background: #105ce2;
+  color:white;
+}
+
+.form_wrap .submit_btn{
+  width: 100%;
+  background: #0d6ad7;
+  padding: 10px;
+  border: 0;
+  color:white;
+  font-size:17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.form_wrap .submit_btn:hover{
+  background: #051c94;
+}
+</style>
+<body>
+  <div class="wrapper">
+    <div class="registration_form">
+      <div class="title">
+        Leave Request Form
+      </div>
+{% block content %}
+  <form action="sub" method="POST">
+      <form action="b" method="POST">
+      <form method="post">
+    {% csrf_token %}
+<div class="form_wrap">
+<div class="input_grp">
+<div class="input_wrap">
+    <label for="empcode">Empcode</label>
+    <input type="password" placeholder="Password" id="code" name="code">
+</div>
+<div class="input_wrap">
+    <label for="leave_type">Leave Type:</label>
+    <select id="leave_type" name="leave_type">
+      <option value="vacation">Vacation</option>
+      <option value="sick_leave">Sick Leave</option>
+      <option value="personal_leave">Personal Leave</option>
+    </select><br><br>
+  </div>
+</div>
+  <div class="input_wrap">
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date"><br><br>
+  </div>
+  <div class="input_wrap">
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date"><br><br>
+  </div>
+  <div class="input_wrap">
+    <label for="reason">Reason:</label>
+    <textarea id="reason" name="reason" rows="5"></textarea><br><br>
+  </div>
+  <div class="input_wrap">
+    <button type="submit">Submit Request</button>
+  </div>
+<h3>{{error}}</h3>
+{% endblock %}
+</form>
+
+</div>
+      <a href="{% url 'register' %}" class="float-right text-dark mt-2">Go back to login</a>
+    </div>
